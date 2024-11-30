@@ -25,6 +25,7 @@ h1 {
   animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1), fade-in 2s forwards;
   position: relative;
   z-index: 1;
+  background-color: black;
 }
 
 /* H2 styles */
@@ -37,6 +38,8 @@ h2 {
   letter-spacing: .15em;
   animation: typing 3.5s steps(30, end), blink-caret .5s step-end infinite;
   position: relative;
+  font-size: large;
+  background-color: black;
   z-index: 1;
 }
 
@@ -47,13 +50,11 @@ h2 {
 }
 
 .jk img {
-  width: 20px;
+  width: 500px;
   animation-name: move;
   animation-duration: 10s;
-}
-
-div img {
-  width: 500px;
+  position: relative;
+  animation-iteration-count: 1;
 }
 
 /* Animation keyframes */
@@ -94,11 +95,17 @@ div img {
 
 @keyframes move {
   0% {
-      left: 0px;
+      left: 0%;
       bottom: 0px;
+      opacity: 0;
+  }
+  50%{
+    left: 80%;
+    opacity: 0.5;
   }
   100% {
-      left: 200px;
+      left: 0%;
       bottom: 0px;
+      opacity: 1;
   }
 }
