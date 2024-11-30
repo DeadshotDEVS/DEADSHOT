@@ -14,7 +14,7 @@ body {
   height: 100%;
   background-image: url(peakpx.jpg);
   background-size: cover;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 /* Header styles */
@@ -29,7 +29,7 @@ h1 {
 
 /* H2 styles */
 h2 {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-family: monospace;
   overflow: hidden;
   border-right: .15em solid orange;
