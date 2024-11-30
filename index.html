@@ -27,12 +27,12 @@
     </style>
 </head>
 <body>
-    <video id="bg-video" loop>
+    <video id="bg-video" autoplay loop muted>
         <source src="jacky1.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <h1>CAPTAIN JACK SPARROW</h1>
-    <h2>
+    <h2 id="trigger">
         Jack Sparrow is a fictional character and the main protagonist of the Pirates of the Caribbean film series and franchise. An early iteration of Sparrow was created by screenwriters Ted Elliott and Terry Rossio, but the final version of the character was created by actor Johnny Depp, who also portrayed him.
 
         The Sparrow character is based on a combination of The Rolling Stones' guitarist Keith Richards and Looney Tunes cartoons, specifically the characters Bugs Bunny and Pepé Le Pew. He first appears in the 2003 film Pirates of the Caribbean: The Curse of the Black Pearl. He appears in the later sequels Dead Man's Chest (2006), At World's End (2007), On Stranger Tides (2011), and Dead Men Tell No Tales (2017).
@@ -49,12 +49,30 @@
 
     <script>
         const video = document.getElementById('bg-video');
-        let videoPlayed = false;
+        const trigger = document.getElementById('trigger');
+        let videoUnmuted = false;
 
-        window.addEventListener('scroll', () => {
-            if (!videoPlayed) {
-                video.play();
-                videoPlayed = true;
+        trigger.addEventListener('touchstart', () => {
+            if (!videoUnmuted) {
+                video.muted = false; // Unmute the video
+                video.play().then(() => {
+                    console.log('Video is playing with audio');
+                }).catch(error => {
+                    console.log('Error playing video:', error);
+                });
+                videoUnmuted = true;
+            }
+        });
+
+        trigger.addEventListener('click', () => {
+            if (!videoUnmuted) {
+                video.muted = false; // Unmute the video
+                video.play().then(() => {
+                    console.log('Video is playing with audio');
+                }).catch(error => {
+                    console.log('Error playing video:', error);
+                });
+                videoUnmuted = true;
             }
         });
     </script>
