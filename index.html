@@ -3,35 +3,13 @@
 <head>
     <title>Jack Sparrow</title>
     <link rel="stylesheet" href="index.css">
-    <style>
-        video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-        body, h1, h2 {
-            color: white;
-        }
-        h1, h2 {
-            position: relative;
-            z-index: 1;
-        }
-        .jacky {
-            position: relative;
-            z-index: 1;
-        }
-    </style>
 </head>
 <body>
+    <h1>CAPTAIN JACK SPARROW</h1>
     <video id="bg-video" autoplay loop muted>
         <source src="jacky1.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <h1>CAPTAIN JACK SPARROW</h1>
     <h2 id="trigger">
         Jack Sparrow is a fictional character and the main protagonist of the Pirates of the Caribbean film series and franchise. An early iteration of Sparrow was created by screenwriters Ted Elliott and Terry Rossio, but the final version of the character was created by actor Johnny Depp, who also portrayed him.
 
@@ -65,6 +43,30 @@
         });
 
         trigger.addEventListener('click', () => {
+            if (!videoUnmuted) {
+                video.muted = false; // Unmute the video
+                video.play().then(() => {
+                    console.log('Video is playing with audio');
+                }).catch(error => {
+                    console.log('Error playing video:', error);
+                });
+                videoUnmuted = true;
+            }
+        });
+
+        video.addEventListener('touchstart', () => {
+            if (!videoUnmuted) {
+                video.muted = false; // Unmute the video
+                video.play().then(() => {
+                    console.log('Video is playing with audio');
+                }).catch(error => {
+                    console.log('Error playing video:', error);
+                });
+                videoUnmuted = true;
+            }
+        });
+
+        video.addEventListener('click', () => {
             if (!videoUnmuted) {
                 video.muted = false; // Unmute the video
                 video.play().then(() => {

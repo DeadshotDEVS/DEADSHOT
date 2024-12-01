@@ -1,12 +1,11 @@
 /* Video styles */
 video {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
 }
 
 /* Body and text styles */
@@ -20,12 +19,12 @@ body {
 /* Header styles */
 h1 {
   text-align: center;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  transform: scale(0.94);
+  font-family: monospace;
+  transform: scale(2);
   animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1), fade-in 2s forwards;
   position: relative;
-  z-index: 1;
-  background-color: black;
+  margin-left: 130px;
+  margin-right: 130px;
 }
 
 /* H2 styles */
@@ -38,7 +37,7 @@ h2 {
   letter-spacing: .15em;
   animation: typing 3.5s steps(30, end), blink-caret .5s step-end infinite;
   position: relative;
-  font-size: large;
+  font-size: xx-large;
   background-color: black;
   z-index: 1;
 }
@@ -60,7 +59,7 @@ h2 {
 /* Animation keyframes */
 @keyframes scale {
   50% {
-      transform: scale(3);
+      transform: scale(1);
   }
 }
 
